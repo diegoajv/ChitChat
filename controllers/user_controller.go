@@ -1,14 +1,12 @@
 package controllers
 
 import (
-	"html/template"
 	"net/http"
+
+	"github.com/diegoajv/ChitChat/utils"
 )
 
 // LogIn HandleFunction
 func LogIn(writer http.ResponseWriter, request *http.Request) {
-	loginTemplate := "templates/login.html"
-
-	templates := template.Must(template.ParseFiles(loginTemplate))
-	templates.Execute(writer, "")
+	utils.GenerateHTML(writer, "", "layout", "navbar", "login")
 }
